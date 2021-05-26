@@ -16,8 +16,14 @@
         <tr>
             <td><label for="imagen">Imagen</label></td>
             <td><input type="file" name="imagen" size="100" id=""></td>
+            <td><input type="text" name="nombre" id=""></td>
+            <td><input type="text" name="descrip" id=""></td>
         </tr>
-        <tr><td><input type="submit" value="enviar imagen"></td></tr>
+
+        <tr>
+            <td><input type="submit" value="enviar imagen"></td>
+        </tr>
+        
         </table>
 
 
