@@ -20,7 +20,7 @@
     <center><legend>Registrar Articulo</legend></center>
   
     <div class="form-group">
-      <label for="nombre" class="form-label mt-2">Nombre</label>
+      <label for="art_nombre" class="form-label mt-2">Nombre</label>
       <input type="text" name="art_nombre"class="form-control" placeholder="Name" required id="">
       
     </div>
@@ -38,11 +38,11 @@
     </div>
     <div class="form-group">
       <label for="imagen" class="form-label mt-2">Imagen del articulo</label>
-      <input type="file" name="imagen" size="100" id="">
+      <input type="file" class="form-control" name="imagen" size="100" id="">
     </div>
     <div class="form-group">
       <label for="art_des" class="form-label mt-2">Descripcion</label>
-      <input type="text" name="art_des" id="">
+      <input type="text"  class="form-control" name="art_des" id="">
     </div>
     
    
@@ -55,7 +55,7 @@
 </form>
 </div>
 
-    <button><a href="leerimagen.php">ir</a></button>
+    <button><a href="verimagen.php">ir</a></button>
     <?php
     
    

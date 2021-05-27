@@ -14,10 +14,12 @@ if (isset($_FILES) && isset($_POST)) {
         $tam_imagen    = $_FILES['imagen']['size'];
         
         //informacion para la base de dato
-        $art_des=isset($_POST ['art_des']) ? mysqli_real_escape_string($conn,$_POST['art_des']):false ;
         $art_nombre=isset ($_POST ['art_nombre']) ? mysqli_real_escape_string($conn,$_POST ['art_nombre'] ): false ;
-        
-        
+        $co_art=isset($_POST ['co_art']) ? mysqli_real_escape_string($conn,$_POST['co_art']):false ;
+        $ref_art=isset($_POST ['ref_art']) ? mysqli_real_escape_string($conn,$_POST['ref_art']):false ;
+        $stock=isset($_POST ['stock']) ? mysqli_real_escape_string($conn,$_POST['stock']):false ;
+        $art_des=isset($_POST ['art_des']) ? mysqli_real_escape_string($conn,$_POST['art_des']):false ;
+
         
 
     /*     var_dump($_FILES); */

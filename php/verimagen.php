@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     
     <title>Document</title>
 </head>
@@ -16,10 +17,11 @@
         <thead >
           <tr class="table-secondary">
             
-            <td>Descripción</td>
-            <td>Código</td>
+            <td>Articulo</td>
+            <td>Imagen</td>
             <td>Precio</td>
-            <td>Referencia</td>
+            <td>Código</td>
+            <td>Descripción</td>
             <td>Cantidad</td>
             <td>Accion</td>
           </tr>
@@ -31,6 +33,7 @@
 
     require 'includes/conexion.php';
 
+
     $sql="SELECT * FROM art WHERE id>=1";
 
     $resultado=mysqli_query($conn,$sql);
@@ -38,14 +41,21 @@
     while ($fila=mysqli_fetch_array($resultado)) {
 
     $nombre = $fila['art_nombre'];
-    $imagen = $fila['art_img'];?>
+    $imagen = $fila['art_img'];
+    $codigo = $fila['co_art'];
+    $cantidad = $fila['stock'];
+    $des = $fila['art_des'];
+    $referencia = $fila['ref_art'];
+    
+    ?>
           <tr>
            
             <td><?php echo $nombre; ?></td>
             <td><img src="../uploads/<?=$imagen?>" alt="" width="80px" ></td>
-            <td>Bs.<?php echo $bolivares; ?></td>
-            <td><?php echo $campo4; ?></td>
-            <td><?php echo $campo5; ?></td>
+            <td>$.<?php echo $referencia ; ?></td>
+            <td><?php echo $codigo; ?></td>
+            <td><?php echo $des; ?></td>
+            <td><?=$cantidad  ?></td>
             <td>
               <a href='edit.php?id=<?php echo $campo1?>' class='btn btn-info'>
                 <i class='fas fa-marker'></i>
@@ -61,36 +71,7 @@
         <?php
 
     
-/*           while($rowC=mysqli_fetch_assoc($runC)) { 
-            $campo1=$rowC['id'];
-            $campo2=$rowC['art_des'];
-            $campo3=$rowC['co_art'];
-            $campo4=$rowC['ref_art'];
-                $total=$campo4*$dolar;
-                $bolivares=number_format($total, 2, ',', '.');
-            $campo5=$rowC['stock'];
-            
-              echo "
-            <tr>
-              <td>".$campo1."</td>
-              <td>".$campo2."</td>
-                  <td>".$campo3."</td>
-                  <td>Bs.".$bolivares."</td>
-                  <td>".$campo4."</td>
-                  <td>".$campo5."</td>
-                  <td>
-                  <a href='edit.php?id= $campo1['id']' class='btn btn-secondary'>
-                    <i class='fas fa-marker'></i>
-                  </a>
-                  <a href='delete_task.php?id= $campo1['id']' class='btn btn-danger'>
-                    <i class='far fa-trash-alt'></i>
-                  </a>
-                </td>
-              
-            </tr>";
-            
-            
-          } */
+
 
 ?>
         
