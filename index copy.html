@@ -8,17 +8,17 @@
   <meta content="" name="description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0">
   <!-- ICONO -->
-  <link href="../img/mantenimiento.png" rel="icon">
-  <link href="../img/icono_zapato.png" rel="apple-touch-icon">
-  <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="img/mantenimiento.png" rel="icon">
+  <link href="img/icono_zapato.png" rel="apple-touch-icon">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../lib/animate/animate.min.css" rel="stylesheet">
-  <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 
@@ -141,7 +141,7 @@
           </div>
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="../img/previashop.jpg" class="img-fluid" alt="">
+            <img src="img/previashop.jpg" class="img-fluid" alt="">
           </div>
         </div>
 
@@ -226,7 +226,7 @@
         <header class="section-header">
           <h3 class="section-title">Portafolio</h3>
         </header>
-        
+
         <div class="row">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
@@ -239,47 +239,132 @@
         </div>
 
         <div class="row portfolio-container">
-
-        <?php
-        
-        require './includes/conexion.php';
-
-        $sql ="SELECT * FROM ART where fecha >='20210501'";
-
-        $consulta = mysqli_query($conn,$sql);
-
-        
-        while ($tabla=mysqli_fetch_array($consulta)) {
-          
-          $nombre = $tabla['art_nombre'];
-          $imagen = $tabla['art_img'];
-          $codigo = $tabla['co_art'];
-          $cantidad = $tabla['stock'];
-          $des = $tabla['art_des'];
-          $referencia = $tabla['ref_art'];
-
-          ?>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+<!--Punto de venta-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="./uploads/<?=$imagen?>" class="img-fluid" alt="">
+              <img src="img/punto_venta/bix-srp350f.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><a href="#"><?=$nombre?></a></h4>
-                <p><?=$codigo ?></p>
+                <h4><a href="#">Custom 1</a></h4>
+                <p>Punto de venta</p>
                 <div>
-                  <a href="./uploads/<?=$imagen?>" data-lightbox="portfolio" data-title="<?=$nombre?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="img/punto_venta/bix-srp350f.jpg" data-lightbox="portfolio" data-title="Zapato 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
             </div>
           </div>
-          
-
-
-
-       <?php  } ?>
-        
- 
+<!--Codigo de barra-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <img src="img/codigo_barra/apt-rf-9000.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">lectora 1</a></h4>
+                <p>Codigo de barra</p>
+                <div>
+                  <a href="img/codigo_barra/apt-rf-9000.jpg" class="link-preview" data-lightbox="portfolio" data-title="Deportivo 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Punto de venta-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <img src="img/punto_venta/acl-cr68fj.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">Casual 2</a></h4>
+                <p>Punto de venta</p>
+                <div>
+                  <a href="img/punto_venta/acl-cr68fj.jpg" class="link-preview" data-lightbox="portfolio" data-title="Casual 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Red de Seguridad-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="img/seguridad/ape-apmj0233wsir.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">Red de Seguridad 1</a></h4>
+                <p>Red de Seguridad</p>
+                <div>
+                  <a href="img/seguridad/ape-apmj0233wsir.jpg" class="link-preview" data-lightbox="portfolio" data-title="Red de Seguridad 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Codigo de barra-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <img src="img/codigo_barra/lector-con-tecnologia-imager-2d-.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">barra 2</a></h4>
+                <p>Codigo de barra</p>
+                <div>
+                  <a href="img/codigo_barra/lector-con-tecnologia-imager-2d-.png" class="link-preview" data-lightbox="portfolio" data-title="Deportivo 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Punto de venta-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <img src="img/punto_venta/advanced-ccd-barcode-scanner-.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">bixolon 3</a></h4>
+                <p>Punto de venta</p>
+                <div>
+                  <a href="img/punto_venta/advanced-ccd-barcode-scanner-.png" class="link-preview" data-lightbox="portfolio" data-title="Casual 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Red de Seguridad-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="img/seguridad/apt-a0041.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">Red de Seguridad 3</a></h4>
+                <p>Red de Seguridad</p>
+                <div>
+                  <a href="img/seguridad/apt-a0041.jpg" class="link-preview" data-lightbox="portfolio" data-title="Red de Seguridad 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Red de Seguridad-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <img src="img/seguridad/ape-j901z.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">Red de Seguridad 2</a></h4>
+                <p>Red de Seguridad</p>
+                <div>
+                  <a href="img/seguridad/ape-j901z.jpg" class="link-preview" data-lightbox="portfolio" data-title="Red de Seguridad 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Codigo de barra-->
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <img src="img/codigo_barra/met-ms9520usbn.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><a href="#">lectora 3</a></h4>
+                <p>lectora</p>
+                <div>
+                  <a href="img/codigo_barra/met-ms9520usbn.jpg" class="link-preview" data-lightbox="portfolio" data-title="Deportivo 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
 
@@ -396,49 +481,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/qiloo_logo.png" class="img-fluid" alt="">
+              <img src="img/clients/qiloo_logo.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/converse.jpg" class="img-fluid" alt="">
+              <img src="img/clients/converse.jpg" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/nike.jpg" class="img-fluid" alt="">
+              <img src="img/clients/nike.jpg" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/adidas.jpg" class="img-fluid" alt="">
+              <img src="img/clients/adidas.jpg" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/umbro.png" class="img-fluid" alt="">
+              <img src="img/clients/umbro.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/lizarra.png" class="img-fluid" alt="">
+              <img src="img/clients/lizarra.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/cat.jfif" class="img-fluid" alt="">
+              <img src="img/clients/cat.jfif" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../img/clients/kickers.png" class="img-fluid" alt="">
+              <img src="img/clients/kickers.png" class="img-fluid" alt="">
             </div>
           </div>
           
@@ -538,7 +623,7 @@
 
           <div class="col-lg-6 col-md-5 footer-info">
         
-            <img src="../img/mantenimiento.png" alt="" srcset="" class="" style="width:300px;
+            <img src="img/mantenimiento.png" alt="" srcset="" class="" style="width:300px;
             height:300px;
             border-radius:150px;">
           </div>
@@ -607,22 +692,22 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
  
-  <script src="../lib/jquery/jquery.min.js"></script>
-  <script src="../lib/jquery/jquery-migrate.min.js"></script>
-  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../lib/easing/easing.min.js"></script>
-  <script src="../lib/mobile-nav/mobile-nav.js"></script>
-  <script src="../lib/wow/wow.min.js"></script>
-  <script src="../lib/waypoints/waypoints.min.js"></script>
-  <script src="../lib/counterup/counterup.min.js"></script>
-  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="../lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
 
   <script src="contactform/contactform.js"></script>
 
 
-  <script src="../js/main.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
