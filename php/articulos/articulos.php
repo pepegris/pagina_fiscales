@@ -13,7 +13,7 @@
 
 
     <div id="body">
-<form action="includes/datosimagen.php" method="POST" enctype="multipart/form-data"  >
+<form action="datos_articulos.php" method="POST" enctype="multipart/form-data"  >
   
     <div class="fieldset">
     <br>
@@ -55,11 +55,8 @@
 </form>
 </div>
 
-    <button><a href="verimagen.php">ir</a></button>
-    <?php
-    
-   
-    ?>
+    <button><a href="ver_articulos.php">ir</a></button>
+  
     
 </body>
 </html>

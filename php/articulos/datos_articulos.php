@@ -1,12 +1,12 @@
 <?php
 
 
-include 'loading.php';
+include '../includes/loading.php';
     // recibimos los datos de la imagen
 
 if (isset($_FILES) && isset($_POST)) {
 
-        require_once 'conexion.php'; 
+        require_once '../includes/conexion.php'; 
         
         //ruta de la imagen
         $nombre_imagen = $_FILES['imagen']['name'];
@@ -31,7 +31,7 @@ if (isset($_FILES) && isset($_POST)) {
 
         
             //ruta del destino del servidor
-            $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/pagina_fiscales/uploads/';
+            $carpeta = $_SERVER['DOCUMENT_ROOT'] . '/pagina_fiscales/php/uploads/';
 
             //almacenando nombre y direccion de la imagen
 
@@ -63,34 +63,43 @@ if (isset($_FILES) && isset($_POST)) {
                                 echo "<h4>$error</h4>";
                         
                                     
-                                echo "<a href='../cargarimagen.php' class='btn btn-danger'>Salir</a>";
+                                echo "<a href='articulos.php' class='btn btn-danger'>Salir</a>";
                                 die();
                                 
                                     
                                 }else {
-                                    header('refresh:2;url= ../cargarimagen.php');
+                                    header('refresh:2;url= articulos.php');
                                     exit;
                                 }
             
                         
             
-                } 
+                } else {
+                    
+                                    
+                                echo "<a href='articulos.php' class='btn btn-danger'>Salir</a>";
+                                die("La conexión ha fallado: " . mysqli_connect_error());
+                }
 
 
     
             
             }else {
                 echo "<center><h3>Por favor suba una imagen valida /JPG/JPEG/PNG/GIF: </h3> <p>$tipo_imagen</p></center>";
-                header('refresh:2;url= ../cargarimagen.php');
-                exit;
+                echo "<a href='articulos.php' class='btn btn-danger'>Salir</a>";
+                                die();
             }
     
     
+    }else {
+        echo "<center><h3>Ingrese una imagen de un tamnaño inferior a 10MB: </h3> <p>$tam_imagen</p></center>";
+        echo "<a href='articulos.php' class='btn btn-danger'>Salir</a>";
+                        die();
     }
 
 
 }else{
-        header('refresh:2;url= ../cargarimagen.php');
+        header('refresh:2;url= articulos.php');
         exit;
     }
 

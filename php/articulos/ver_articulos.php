@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <?php
+    include '../includes/header.php'; 
+    ?>
+    
+
     
     <title>Document</title>
 </head>
@@ -31,21 +35,22 @@
         
         <?php
 
-    require 'includes/conexion.php';
+    require '../includes/conexion.php';
 
 
     $sql="SELECT * FROM art WHERE id>=1";
 
     $resultado=mysqli_query($conn,$sql);
 
-    while ($fila=mysqli_fetch_array($resultado)) {
+    while ($tabla=mysqli_fetch_array($resultado)) {
 
-    $nombre = $fila['art_nombre'];
-    $imagen = $fila['art_img'];
-    $codigo = $fila['co_art'];
-    $cantidad = $fila['stock'];
-    $des = $fila['art_des'];
-    $referencia = $fila['ref_art'];
+    $id = $tabla['id'];
+    $nombre = $tabla['art_nombre'];
+    $imagen = $tabla['art_img'];
+    $codigo = $tabla['co_art'];
+    $cantidad = $tabla['stock'];
+    $des = $tabla['art_des'];
+    $referencia = $tabla['ref_art'];
     
     ?>
           <tr>
@@ -57,10 +62,10 @@
             <td><?php echo $des; ?></td>
             <td><?=$cantidad  ?></td>
             <td>
-              <a href='edit.php?id=<?php echo $campo1?>' class='btn btn-info'>
+              <a href='edit.php?id=<?php echo $id?>' class='btn btn-info'>
                 <i class='fas fa-marker'></i>
               </a>
-              <a href='delete.php?id=<?php echo $campo1?>' class='btn btn-danger'>
+              <a href='delete.php?id=<?php echo $id?>' class='btn btn-danger'>
                 <i class='far fa-trash-alt'></i>
               </a>
             </td>
@@ -70,7 +75,7 @@
 
         <?php
 
-    
+    require '../includes/excel.php';
 
 
 ?>
